@@ -35,6 +35,8 @@
     "ionic-angular": "3.9.2",
     "ionic2-super-tabs": "^4.2.2",
     "ionicons": "3.0.0",
+    "ng-lazyload-image": "^3.4.2",
+    "ng2-lazyload-image": "^2.4.0",
     "promise-polyfill": "^7.0.2",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",

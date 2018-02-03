@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,6 +18,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireStorageModule } from 'angularfire2/storage'
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 
 export const firebaseConfig = {
     apiKey: "AIzaSyDLG11t5fDk-qss1D9kq-oIvfeZ-Rck2EA",
@@ -47,7 +51,10 @@ export const firebaseConfig = {
     }),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    SuperTabsModule.forRoot()
+    AngularFireStorageModule,
+    SuperTabsModule.forRoot(),
+    CommonModule,
+    LazyLoadImageModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
