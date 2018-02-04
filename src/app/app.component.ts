@@ -9,8 +9,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
-
-
+import { File } from '@ionic-native/file'
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,7 +18,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any;
 
-  constructor(private fire: AngularFireAuth, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen , 
+  constructor(public file: File,private fire: AngularFireAuth, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen , 
     public loadingCtrl: LoadingController) {
 
     let loader = this.loadingCtrl.create();
@@ -32,6 +31,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    
+
+
   }
 
   listenToUserStatusUpdate(loader: any) {

@@ -20,6 +20,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from 'angularfire2/storage'
 import { LazyLoadImageModule } from 'ng-lazyload-image';
+import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 
 
 export const firebaseConfig = {
@@ -54,7 +56,7 @@ export const firebaseConfig = {
     AngularFireStorageModule,
     SuperTabsModule.forRoot(),
     CommonModule,
-    LazyLoadImageModule 
+    LazyLoadImageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -70,7 +72,10 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FileTransfer,
+    FileTransferObject,
+    File
   ]
 })
 export class AppModule {}
